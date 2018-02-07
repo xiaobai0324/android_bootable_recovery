@@ -178,6 +178,11 @@
 				<text>%tw_version%</text>
 			</text>
 
+			<text style="text_m">
+				<placement x="%row3_input_y%" y="%row4_header_y%"/>
+				<text>{@author_youyim=by youyim %recovery_build_date%}</text>
+			</text>
+
 			<button style="main_button">
 				<placement x="%indent%" y="%row2a_y%"/>
 				<text>{@install_btn=Install}</text>
@@ -3495,6 +3500,12 @@
 			</button>
 
 			<button style="main_button">
+				<placement x="%center_x%" y="%row19_y%"/>
+				<text>{@youyim_tools=Youyim Tools}</text>
+				<action function="page">youyim</action>
+			</button>
+
+			<button style="main_button">
 				<condition var1="tw_show_dumlock" var2="1"/>
 				<placement x="%center_x%" y="%row19_y%"/>
 				<text>{@dumlock_btn=HTC Dumlock}</text>
@@ -4708,49 +4719,122 @@
 			</action>
 		</page>
 
-		<page name="installsu">
+		<page name="youyim">
 			<template name="page"/>
 
 			<text style="text_l">
 				<placement x="%col1_x_header%" y="%row3_header_y%"/>
-				<text>{@reboot_hdr=Reboot}</text>
+				<text>{@youyim_tools_hdr=Youyim Tools}</text>
 			</text>
 
-			<text style="text_m">
-				<placement x="%col1_x_header%" y="%row4_header_y%"/>
-				<text>{@su_hdr=SuperSU Check}</text>
-			</text>
-
-			<text style="text_m_accent">
-				<placement x="%center_x%" y="%row2_y%" placement="5"/>
-				<text>{@su_note1=Your device does not appear to be rooted.}</text>
-			</text>
-
-			<text style="text_m">
-				<placement x="%center_x%" y="%row4_y%" placement="5"/>
-				<text>{@su_note2=Install SuperSU now?}</text>
-			</text>
-
-			<text style="text_m">
-				<placement x="%center_x%" y="%row5_y%" placement="5"/>
-				<text>{@su_note3=This will root your device.}</text>
-			</text>
-
-			<button style="main_button_half_height">
-				<placement x="%indent%" y="%row18a_y%"/>
-				<text>{@su_cancel=Do not Install}</text>
-				<action function="set">tw_page_done=1</action>
+			<button style="main_button">
+				<placement x="%indent%" y="%row2a_y%"/>
+				<text>{@install_su_btn=Install Su}</text>
+				<actions>
+					<action function="set">tw_back=youyim</action>
+					<action function="set">tw_filename=/supersu/supersu.zip</action>
+					<action function="set">tw_action=queuezip</action>
+					<action function="set">tw_has_action2=1</action>
+					<action function="set">tw_action2=flash</action>
+					<action function="set">tw_action2_param=flash_zip</action>
+					<action function="set">tw_text1={@root_device_confirm=Root your device?}</action>
+					<action function="set">tw_action_text1={@root_device=Rooting your device...}</action>
+					<action function="set">tw_complete_text1={@root_device_complete=Root Complete}</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
+				</actions>
 			</button>
 
-			<slider>
-				<text>{@swipe_su_to_install=Swipe to Install}</text>
+			<button style="main_button">
+				<placement x="%center_x%" y="%row2a_y%"/>
+				<text>{@uninstall_su_btn=Uninstall Su}</text>
 				<actions>
-					<action function="set">tw_action=installsu</action>
-					<action function="set">tw_action_text1={@su_installing=Installing SuperSU}</action>
-					<action function="set">tw_action_text2=</action>
-					<action function="page">singleaction_page</action>
+					<action function="set">tw_back=youyim</action>
+					<action function="set">tw_filename=/supersu/unroot.zip</action>
+					<action function="set">tw_action=queuezip</action>
+					<action function="set">tw_has_action2=1</action>
+					<action function="set">tw_action2=flash</action>
+					<action function="set">tw_action2_param=flash_zip</action>
+					<action function="set">tw_text1={@unroot_device_confirm=Unroot your device?}</action>
+					<action function="set">tw_action_text1={@unroot_device=Unrooting your device...}</action>
+					<action function="set">tw_complete_text1={@unroot_device_complete=Unroot Complete}</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
 				</actions>
-			</slider>
+			</button>
+
+			<button style="main_button">
+				<placement x="%indent%" y="%row8_y%"/>
+				<text>{@wipe_battery_stats_btn=Wipe Battery Stats}</text>
+				<actions>
+					<action function="set">tw_back=youyim</action>
+					<action function="set">tw_action=wipe</action>
+					<action function="set">tw_action_param=battery</action>
+					<action function="set">tw_text1={@wipe_battery_stats_confirm=Wipe Battery Stats?}</action>
+					<action function="set">tw_action_text1={@wipe_battery_stats=Wiping Battery Stats...}</action>
+					<action function="set">tw_complete_text1={@wipe_battery_stats_complete=Wipe Battery Stats Complete}</action>
+					<action function="set">tw_slider_text={@swipe_wipe=Swipe to Wipe}</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</button>
+
+			<button style="main_button">
+				<placement x="%center_x%" y="%row8_y%"/>
+				<text>{@stock_recovery_btn=Stock Recovery}</text>
+				<actions>
+					<action function="set">tw_action=stockrecovery</action>
+					<action function="set">tw_action_text1={@flash_stock_recovery=Flashing Stock Recovery...}</action>
+					<action function="set">tw_complete_text1={@flash_stock_recovery_complete=Flash Stock Recovery Complete}</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</button>
+
+			<button style="main_button">
+				<placement x="%indent%" y="%row13a_y%"/>
+				<text>{@remove_password_btn=Remove Password}</text>
+				<actions>
+					<action function="set">tw_back=youyim</action>
+					<action function="set">tw_filename=/supersu/remove_password.zip</action>
+					<action function="set">tw_action=queuezip</action>
+					<action function="set">tw_has_action2=1</action>
+					<action function="set">tw_action2=flash</action>
+					<action function="set">tw_action2_param=flash_zip</action>
+					<action function="set">tw_text1={@removepassword_device_confirm=remove password?}</action>
+					<action function="set">tw_action_text1={@removepassword_device=removing password...}</action>
+					<action function="set">tw_complete_text1={@removepassword_device_complete=remove password Complete}</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</button>
+
+			<button style="main_button">
+				<placement x="%center_x%" y="%row13a_y%"/>
+				<text>{@verified_bootsigner_btn=Verified BootSigner}</text>
+				<actions>
+					<action function="set">tw_back=youyim</action>
+					<action function="set">tw_filename=/supersu/VerifiedBootSigner.zip</action>
+					<action function="set">tw_action=queuezip</action>
+					<action function="set">tw_has_action2=1</action>
+					<action function="set">tw_action2=flash</action>
+					<action function="set">tw_action2_param=flash_zip</action>
+					<action function="set">tw_text1={@verifiedbootsigner_device_confirm=verified bootsigner?}</action>
+					<action function="set">tw_action_text1={@verifiedbootsigner_device=verified bootsigner...}</action>
+					<action function="set">tw_complete_text1={@verifiedbootsigner_device_complete=verified bootsigner Complete}</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</button>
+
+			<action>
+				<touch key="home"/>
+				<action function="page">main</action>
+			</action>
+
+			<action>
+				<touch key="back"/>
+				<action function="page">advanced</action>
+			</action>
 		</page>
 
 		<page name="slideout">
