@@ -4782,7 +4782,9 @@
 				<placement x="%center_x%" y="%row8_y%"/>
 				<text>{@stock_recovery_btn=Stock Recovery}</text>
 				<actions>
+					<action function="set">tw_back=youyim</action>
 					<action function="set">tw_action=stockrecovery</action>
+					<string name="flash_stock_recovery_confirm">Flash Stock Recovery?</string>
 					<action function="set">tw_action_text1={@flash_stock_recovery=Flashing Stock Recovery...}</action>
 					<action function="set">tw_complete_text1={@flash_stock_recovery_complete=Flash Stock Recovery Complete}</action>
 					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
