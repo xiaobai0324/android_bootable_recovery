@@ -779,6 +779,14 @@ bool TWFunc::Install_SuperSU(void) {
 	return true;
 }
 
+bool TWFunc::Stock_Recovery(void) {
+	if (!PartitionManager.Mount_By_Path("/system", true))
+		return false;
+
+	check_and_run_script("/system/bin/install-recovery.sh", "Stock Recovery");
+	return true;
+}
+
 bool TWFunc::Try_Decrypting_Backup(string Restore_Path, string Password) {
 	DIR* d;
 

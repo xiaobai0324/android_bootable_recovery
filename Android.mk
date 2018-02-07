@@ -215,6 +215,10 @@ endif
 ifneq ($(RECOVERY_SDCARD_ON_DATA),)
 	LOCAL_CFLAGS += -DRECOVERY_SDCARD_ON_DATA
 endif
+#Add fix nubia ota by cofface
+ifeq ($(BOARD_FIX_NUBIA_OTA),true)
+	LOCAL_CFLAGS += -DBOARD_FIX_NUBIA_OTA
+endif
 ifneq ($(TW_INCLUDE_DUMLOCK),)
 	LOCAL_CFLAGS += -DTW_INCLUDE_DUMLOCK
 endif
@@ -366,6 +370,8 @@ ifneq ($(TW_DEFAULT_LANGUAGE),)
 else
     LOCAL_CFLAGS += -DTW_DEFAULT_LANGUAGE=en
 endif
+RECOVERY_BUILD_DATE := $(shell date +"%Y%m%d")
+LOCAL_CFLAGS += -DRECOVERY_BUILD_DATE="$(RECOVERY_BUILD_DATE)"
 
 LOCAL_ADDITIONAL_DEPENDENCIES += \
     dump_image \
@@ -434,7 +440,7 @@ ifeq ($(TW_INCLUDE_DUMLOCK), true)
         htcdumlock htcdumlocksys flash_imagesys dump_imagesys libbmlutils.so \
         libflashutils.so libmmcutils.so libmtdutils.so HTCDumlock.apk
 endif
-ifneq ($(TW_EXCLUDE_SUPERSU), true)
+ifeq ($(TW_EXCLUDE_SUPERSU), true)
     LOCAL_ADDITIONAL_DEPENDENCIES += \
         install-recovery.sh 99SuperSUDaemon Superuser.apk
     ifeq ($(TARGET_ARCH), arm)
