@@ -32,7 +32,7 @@
 		<string name="adopted_storage">Adopted 存储</string>
 
 		<!-- GUI XML strings -->
-		<string name="twrp_header">Team Win Recovery Project</string>
+		<string name="twrp_header">Nubia Z17 REC</string>
 		<string name="twrp_watch_header">TWRP %tw_version%</string>
 		<string name="cpu_temp">温度：%tw_cpu_temp% &#xB0;C</string>
 		<string name="battery_pct">电量：%tw_battery%</string>
@@ -693,5 +693,44 @@
 		<string name="include_kernel_log">包含内核日志</string>
 		<string name="sha2_chk">使用 SHA2 进行散列校验</string>
 		<string name="unable_set_boot_slot">更改 bootloader 启动分区至 {1} 错误</string>
+		<string name="install_su_btn">获取root</string>
+		<string name="uninstall_su_btn">卸载root</string>
+		<string name="install_supersu">获取root完成</string>
+		<string name="uninstall_supersu">卸载root完成</string>
+		<string name="install_supersu_hdr">获取root</string>
+		<string name="uninstall_supersu_hdr">卸载root</string>
+		<string name="su_uninstalling">正在卸载root</string>
+		<string name="swipe_su_to_uninstall">滑动按钮确定卸载</string>
+		<string name="author_youyim">制作：youyim  %recovery_build_date%</string>
+		<string name="stock_recovery_btn">恢复官方Recovery</string>
+		<string name="flash_stock_recovery_confirm">刷回官方Recovery?</string>
+		<string name="flash_stock_recovery">正在刷回官方Recovery...</string>
+		<string name="flash_stock_recovery_complete">Recovery已替换回官方，重新进入即可</string>
+		<string name="youyim_tools">youyim工具箱</string>
+		<string name="youyim_tools_hdr">youyim工具箱</string>
+		<string name="root_device_confirm">确定要获取ROOT权限?</string>
+		<string name="root_device">正在获取ROOT权限...</string>
+		<string name="root_device_complete">获取ROOT权限完成</string>
+		<string name="unroot_device_confirm">确定要去除ROOT权限?</string>
+		<string name="unroot_device">正在去除ROOT权限...</string>
+		<string name="unroot_device_complete">去除ROOT权限完成</string>
+		<string name="wipe_battery_stats_btn">清除电池信息</string>
+		<string name="wipe_battery_stats_confirm">清除电池信息?</string>
+		<string name="wipe_battery_stats">正在清除电池信息...</string>
+		<string name="wipe_battery_stats_complete">电池信息清除完成</string>
+		<string name="stock_recovery_btn">官方Recovery</string>
+		<string name="flash_stock_recovery_confirm">刷回官方Recovery?</string>
+		<string name="flash_stock_recovery">正在刷回官方Recovery...</string>
+		<string name="flash_stock_recovery_complete">Recovery已替换回官方，重新进入即可</string>
+		<string name="remove_password_btn">清除开机密码</string>
+		<string name="removepassword_device_confirm">是否要清除开机密码?</string>
+		<string name="removepassword_device">清除开机密码中...</string>
+		<string name="removepassword_device_complete">清除密码完成</string>
+		<string name="verified_bootsigner_btn">内核签名</string>
+		<string name="verifiedbootsigner_device_confirm">签名内核？?</string>
+		<string name="verifiedbootsigner_device">签名内核中...</string>
+		<string name="verifiedbootsigner_device_complete">签名内核完成</string>
+		<string name="verifiedbootsigner_device_confirm2">内核签名用于刷入了修改boot的单刷包后导致无法开机，使用该功能后可开机。</string>
+		<string name="verifiedbootsigner_device_confirm3">例如刷入原版supersu、magisk等后再使用该功能给boot签名即可开机</string>
 	</resources>
 </language>
