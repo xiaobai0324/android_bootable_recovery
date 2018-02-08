@@ -81,7 +81,7 @@
 		<string name="zip_back_clear">按返回按钮清除刷机包刷入队列。</string>
 		<string name="folder">目录：</string>
 		<string name="file">文件：</string>
-		<string name="zip_sig_chk">Zip 刷机包签名校验</string>
+		<string name="zip_sig_chk">Zip 刷机包签名校验(不要勾选)</string>
 		<string name="inject_twrp_chk">安装完成后注入 TWRP</string>
 		<string name="install_reboot_chk">安装完成后重启</string>
 		<string name="options_hdr">选项</string>
