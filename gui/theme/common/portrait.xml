@@ -4726,43 +4726,7 @@
 				<placement x="%col1_x_header%" y="%row3_header_y%"/>
 				<text>{@youyim_tools_hdr=Youyim Tools}</text>
 			</text>
-
-			<button style="main_button">
-				<placement x="%indent%" y="%row2a_y%"/>
-				<text>{@install_su_btn=Install Su}</text>
-				<actions>
-					<action function="set">tw_back=youyim</action>
-					<action function="set">tw_filename=/supersu/supersu.zip</action>
-					<action function="set">tw_action=queuezip</action>
-					<action function="set">tw_has_action2=1</action>
-					<action function="set">tw_action2=flash</action>
-					<action function="set">tw_action2_param=flash_zip</action>
-					<action function="set">tw_text1={@root_device_confirm=Root your device?}</action>
-					<action function="set">tw_action_text1={@root_device=Rooting your device...}</action>
-					<action function="set">tw_complete_text1={@root_device_complete=Root Complete}</action>
-					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
-					<action function="page">confirm_action</action>
-				</actions>
-			</button>
-
-			<button style="main_button">
-				<placement x="%center_x%" y="%row2a_y%"/>
-				<text>{@uninstall_su_btn=Uninstall Su}</text>
-				<actions>
-					<action function="set">tw_back=youyim</action>
-					<action function="set">tw_filename=/supersu/unroot.zip</action>
-					<action function="set">tw_action=queuezip</action>
-					<action function="set">tw_has_action2=1</action>
-					<action function="set">tw_action2=flash</action>
-					<action function="set">tw_action2_param=flash_zip</action>
-					<action function="set">tw_text1={@unroot_device_confirm=Unroot your device?}</action>
-					<action function="set">tw_action_text1={@unroot_device=Unrooting your device...}</action>
-					<action function="set">tw_complete_text1={@unroot_device_complete=Unroot Complete}</action>
-					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
-					<action function="page">confirm_action</action>
-				</actions>
-			</button>
-
+			
 			<button style="main_button">
 				<placement x="%indent%" y="%row8_y%"/>
 				<text>{@wipe_battery_stats_btn=Wipe Battery Stats}</text>
