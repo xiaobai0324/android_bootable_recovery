@@ -215,10 +215,6 @@ endif
 ifneq ($(RECOVERY_SDCARD_ON_DATA),)
 	LOCAL_CFLAGS += -DRECOVERY_SDCARD_ON_DATA
 endif
-#Add fix nubia ota by cofface
-ifeq ($(BOARD_FIX_NUBIA_OTA),true)
-	LOCAL_CFLAGS += -DBOARD_FIX_NUBIA_OTA
-endif
 ifneq ($(TW_INCLUDE_DUMLOCK),)
 	LOCAL_CFLAGS += -DTW_INCLUDE_DUMLOCK
 endif
